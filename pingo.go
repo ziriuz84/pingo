@@ -55,4 +55,20 @@ func main() {
 	fmt.Scan(&address)
 	pingo(address)
 	pingo("www." + address)
+	var subdomain string
+	var resp string
+	for {
+		fmt.Println("Vuoi provare altri sottodomini? (s/n)")
+		fmt.Scan(&resp)
+		if resp == "s" {
+			fmt.Println("Quale sottodominio?")
+			fmt.Scan(&subdomain)
+			pingo(subdomain + "." + address)
+		} else if resp == "n" {
+			fmt.Println("Uscita in corso")
+			break
+		} else {
+			fmt.Println("Per favore, scrivi la risposta nel modo corretto:\ns se sì\nn se no")
+		}
+	}
 }
